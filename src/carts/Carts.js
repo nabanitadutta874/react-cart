@@ -1,21 +1,25 @@
 import React from 'react';
-import {productList} from '../asset/productList.js'
-import { Container, Row, Col } from 'react-bootstrap';
+import { Container } from 'react-bootstrap';
+import { Card } from 'react-bootstrap';
+import { useSelector } from 'react-redux';
 
 function Carts() {
-  return(
+  const state = useSelector((state) => state);
+  const products = state.itemList.includes(' ')
+    ? state.itemList.split('  ')
+    : [state.itemList];
+  return (
     <Container>
-      <Row className="justify-content-center" style={{ margin: 0 }}>
-        {productList.map((elem) => {
-          return (
-            <Col sm={4} key={elem.key} style={{ margin: 0 }}>
-              <ProductCard product={elem} />
-            </Col>
-          );
-        })}
-      </Row>
+      <Card style={{ marginTop: '5px' }}>
+        <Card.Body>
+          <Card.Title>Product details</Card.Title>
+          {products.map((elem) => {
+            return <h2>{elem}</h2>;
+          })}
+        </Card.Body>
+      </Card>
     </Container>
-  )
+  );
 }
 
 export default Carts;
