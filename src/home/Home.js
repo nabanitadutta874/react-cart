@@ -4,7 +4,6 @@ import ProductCard from './productCard/ProductCard';
 import { productList } from '../asset/productList.js';
 
 function Home() {
-
   return (
     <Container>
       <Row className="justify-content-center" style={{ margin: 0 }}>

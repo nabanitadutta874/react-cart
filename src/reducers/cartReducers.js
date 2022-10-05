@@ -1,4 +1,4 @@
-import { ADD_ITEM } from '../actionTypes/actionTypes';
+import { ADD_ITEM, REMOVE_ITEM } from '../actionTypes/actionTypes';
 
 const initialState = {
   numOfItems: 0,
@@ -12,6 +12,14 @@ export const cartReducers = (state = initialState, action) => {
       return {
         numOfItems: state.numOfItems + 1,
         itemList: state.itemList + ' ' + product.key,
+      };
+    case REMOVE_ITEM:
+      let items = state.itemList.split(' ');
+      items = items.filter((item) => item !== product.key);
+      const itemList = items.join(' ');
+      return {
+        numOfItems: state.numOfItems - 1,
+        itemList: itemList,
       };
 
     default:

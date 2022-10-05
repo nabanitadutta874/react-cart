@@ -1,10 +1,13 @@
-import { ADD_ITEM } from '../actionTypes/actionTypes';
+import { ADD_ITEM, REMOVE_ITEM } from '../actionTypes/actionTypes';
 
 const addItem = (product) => ({
-  
-    type: ADD_ITEM,
-    product: product
-  
+  type: ADD_ITEM,
+  product: product,
 });
 
-export { addItem };
+const removeItem = (product) => ({
+  type: REMOVE_ITEM,
+  product: product,
+});
+
+export { addItem, removeItem };
