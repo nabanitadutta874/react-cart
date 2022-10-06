@@ -11,7 +11,7 @@ const NavbarComponent = (props) => {
         <a href="/home">Home</a>
       </li>
       <li>
-        <a href="/carts">Carts<span class="badge">{state.numOfItems}</span></a>
+        <a href="/carts">Carts<span className="badge">{state.numOfItems}</span></a>
       </li>
     </ul>
   );

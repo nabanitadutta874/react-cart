@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import { Card} from 'react-bootstrap';
+import { Card } from 'react-bootstrap';
 import { useDispatch } from 'react-redux';
 import { addItem, removeItem } from '../../actions/CartActions';
 import { useSelector } from 'react-redux';
-import './index.css'
+import './index.css';
 
 function ProductCard(props) {
   const state = useSelector((state) => state);
@@ -29,10 +29,17 @@ function ProductCard(props) {
         >
           addToCart
         </button>
-        {buttonDisable && <a class="removeItem" onClick={() => {
-            dispatch(removeItem(props.product));
-          }}> remove </a>}
-        
+        {buttonDisable && (
+          <a
+            className="removeItem"
+            onClick={() => {
+              dispatch(removeItem(props.product));
+            }}
+          >
+            {' '}
+            remove{' '}
+          </a>
+        )}
       </Card.Body>
     </Card>
   );
