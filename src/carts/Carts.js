@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container } from 'react-bootstrap';
+import { Container, Row, Col } from 'react-bootstrap';
 import { Card } from 'react-bootstrap';
 import { useSelector } from 'react-redux';
 import CartItem from './cartItem/CartItem';
@@ -11,14 +11,19 @@ function Carts() {
     : [state.itemList];
   return (
     <Container>
+      
       <Card style={{ marginTop: '5px' }}>
         <Card.Body>
           <Card.Title>Cart Details</Card.Title>
+          <Row >
           {products.map((elem, index) => {
-            return <CartItem prodKey={elem} key={index} />;
+            return <Col sm={4} key={index} style={{ margin: 0 }}><CartItem prodKey={elem}  />
+            </Col>
           })}
+          </Row>
         </Card.Body>
       </Card>
+      
     </Container>
   );
 }
