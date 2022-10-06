@@ -7,7 +7,7 @@ ul {
 }
 li {
   display: inline;
-  float: right;
+  float: left;
 }
 li a {
   display: block;
@@ -21,7 +21,7 @@ li a:hover {
   background-color: white;
 }
 li a .active {
-  background-color: #04AA6D;
+  background-color: #04aa6d;
 }
 .badge {
   background-color: red;
