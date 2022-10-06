@@ -14,8 +14,8 @@ function Carts() {
       <Card style={{ marginTop: '5px' }}>
         <Card.Body>
           <Card.Title>Cart Details</Card.Title>
-          {products.map((elem) => {
-            return <CartItem prodKey={elem} />;
+          {products.map((elem, index) => {
+            return <CartItem prodKey={elem} key={index} />;
           })}
         </Card.Body>
       </Card>
