@@ -11,19 +11,20 @@ function Carts() {
     : [state.itemList];
   return (
     <Container>
-      
       <Card style={{ marginTop: '5px' }}>
         <Card.Body>
           <Card.Title>Cart Details</Card.Title>
-          <Row >
-          {products.map((elem, index) => {
-            return <Col sm={4} key={index} style={{ margin: 0 }}><CartItem prodKey={elem}  />
-            </Col>
-          })}
+          <Row>
+            {products.map((elem, index) => {
+              return (
+                <Col sm={4} key={index} style={{ margin: 0 }}>
+                  <CartItem prodKey={elem} />
+                </Col>
+              );
+            })}
           </Row>
         </Card.Body>
       </Card>
-      
     </Container>
   );
 }
