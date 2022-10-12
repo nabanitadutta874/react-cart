@@ -2,7 +2,7 @@ import { ADD_ITEM, REMOVE_ITEM } from '../actionTypes/actionTypes';
 
 const initialState = {
   numOfItems: 0,
-  itemList: [],
+  itemList: '',
 };
 
 export const cartReducers = (state = initialState, action) => {
@@ -11,7 +11,10 @@ export const cartReducers = (state = initialState, action) => {
     case ADD_ITEM:
       return {
         numOfItems: state.numOfItems + 1,
-        itemList: state.itemList + ' ' + product.key,
+        itemList:
+          state.itemList.length === 0
+            ? product.key
+            : state.itemList + ' ' + product.key,
       };
     case REMOVE_ITEM:
       let items = state.itemList.split(' ');
